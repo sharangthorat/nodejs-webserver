@@ -5,6 +5,8 @@ const { send } = require('process')
 const geocode = require('./utils/geocode')
 const getweather = require('./utils/getweather')
 
+const port = process.env.PORT || 3000
+
 const app = express()
 
 app.set('view engine', 'hbs')
@@ -49,7 +51,7 @@ app.get('/weather', (req, res) => {
 
                     } else {
                         res.send({
-                            
+
                               "location": location,
                               "description": description,
                               "temperature": temperature,
@@ -74,6 +76,6 @@ app.get('/weather', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server is listening on port 3000 !!')
+app.listen(port, () => {
+    console.log('Server is listening on port : ' + port + ' !!!')
 })

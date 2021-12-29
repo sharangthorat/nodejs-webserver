@@ -21,6 +21,11 @@ app.get('/index', (req, res) => {
 }
 )
 
+app.get('', (req, res) => {
+    res.render('index')
+}
+)
+
 app.get('/help', (req, res) => {
     res.render('help', {
         name: 'Sharang',
